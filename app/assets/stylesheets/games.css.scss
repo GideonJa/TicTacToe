@@ -47,7 +47,7 @@ $header1-color: lighten($x-color, 15%);
 }
 
 .fa-times.hov, .fa-laptop:hover, .fa-gamepad:hover {
-    color: lighten($x-color, 10%);
+    color: lighten($x-color, 15%);
 }
 
 .fa-circle-o{
@@ -55,7 +55,7 @@ $header1-color: lighten($x-color, 15%);
 }
 
 .fa-circle-o.hov {
-    color: lighten($y-color, 15%)
+    color: lighten($y-color, 20%)
 }
 
 .call-to-action {
