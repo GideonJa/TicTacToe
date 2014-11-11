@@ -1,27 +1,34 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+A short project to play the perfect TicTacToe
+play modes:
+1. Against the computer -> player starts.
+2. Against the computer -> Computer starts.
+3. Two players.
 
-* Ruby version
+You can switch modes anytime during the play.
+
+The game is available at https://gtictactoe.herokuapp.com/
+
+
+Environment:
+
+* Ruby version 2.1.4
+
+* Rails 4.1.7
+
+* jQuery
 
 * System dependencies
 
 * Configuration
 
-* Database creation
+* Database creation: PSQL not in use in this project
 
-* Database initialization
+* Database initialization: rake db:create rake db:migrate
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 
 
 Please feel free to use a different markup language if you do not plan to run
