@@ -81,10 +81,15 @@ $header1-color: lighten($x-color, 15%);
   color : $x-color;
 }
 
+.result {
+  height: 25px;
+}
+
 .result h1 {
   color : #FA5858;
-  text-align: center;
+  text-align: center; 
 }
+
 
 .hide_div {
    display: none;
@@ -95,9 +100,9 @@ $header1-color: lighten($x-color, 15%);
   top: 146px;
   left: 7px;*/
   position: relative;
-  top: 90px;
-  left: 591px;
-  margin-bottom: -90px;
+  top: 120px;
+  left: 46%;
+  margin-bottom: -100px;
   background-color: rgba(0,0,0,0.0);
   padding: 32px;
   border-radius: 50%;
