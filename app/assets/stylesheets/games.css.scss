@@ -82,7 +82,9 @@ $header1-color: lighten($x-color, 15%);
 }
 
 .result {
-  height: 25px;
+  height: 50px;
+  display: block;
+  overflow: hidden;
 }
 
 .result h1 {

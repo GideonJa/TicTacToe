@@ -60,18 +60,6 @@
   <%= f.submit %>
 </div>
 
-<div class="result">
-  <% case @game.score %>
-  <% when 1..10%>
-    <h1> X Wins </h1>
-  <% when -10..-1 %>
-    <h1> O Wins </h1>
-  <%when 0%>
-    <h1> It's a Draw </h1>
-  <%else  %>
-  <% end %>
-</div>
-
 <div id="instruct">
   <%if @game.status == "man" && !@game.score%>
     <% if @game.board == [] || @game.board.count("") == 9 %>
@@ -86,9 +74,21 @@
 </div>
 <% end %>
 
-  <div class="hide_div" id="photo_upload_progress">
-    <%= image_tag("progress_large.gif") %>
-  </div>
+<div class="result">
+  <% case @game.score %>
+  <% when 1..10%>
+    <h1> X Wins </h1>
+  <% when -10..-1 %>
+    <h1> O Wins </h1>
+  <%when 0%>
+    <h1> It's a Draw </h1>
+  <%else  %>
+  <% end %>
+</div>
+
+<div class="hide_div" id="photo_upload_progress">
+  <%= image_tag("progress_large.gif") %>
+</div>
 
 
 <div class="board-row">
