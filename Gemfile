@@ -16,7 +16,7 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'therubyracer',  platforms: :ruby
 
 gem "font-awesome-rails"
-gem 'rails_12factor', '~> 0.0.3'
+
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -42,3 +42,4 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'rails_12factor', group: :production
