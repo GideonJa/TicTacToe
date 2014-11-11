@@ -10,7 +10,6 @@ class GameTree < ActiveRecord::Base
         next_board[index] = game.current_player
      
         next_game = Game.new(game.level+1, next_player, next_board)
-        @@num +=1
         game.moves << next_game
         if next_game.win?
           next_game.score = next_game.win? =="x" ? 10 : -10 

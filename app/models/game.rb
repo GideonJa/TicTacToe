@@ -16,11 +16,10 @@ class Game < ActiveRecord::Base
     winner = nil
     win_combinations.each do |comb|
       unless winner
-        if board[comb[0]] == board[comb[1]] &&
-            board[comb[1]] == board[comb[2]] &&
-            !board[comb[0]].blank?
-          winner = board[comb[0]] 
-        end
+        winner = board[comb[0]]  if board[comb[0]] == board[comb[1]] &&
+                                    board[comb[1]] == board[comb[2]] &&
+                                    !board[comb[0]].blank?
+          
       end
     end
     return winner
