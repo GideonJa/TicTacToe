@@ -1,0 +1,116 @@
+<%= form_for(@game) do |f| %>
+  <% if @game.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@game.errors.count, "error") %> prohibited this game from being saved:</h2>
+
+      <ul>
+      <% @game.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field" id="radio">
+    <%= f.radio_button(:status, "comp") %>
+    <%= f.label :status, "Play against the computer" %>
+    <%= f.radio_button(:status, "man") %>
+    <%= f.label(:status, "Two Players") %>
+  </div>
+
+  <div class="field hide_div">
+    <%= f.label :current_player %><br>
+    <%= f.text_field :current_player, readonly: true %>
+  </div>
+
+  <div class="field hide_div">
+    <%= f.label :level %><br>
+    <%= f.text_field :level, readonly: true  %>
+  </div>
+  <div class="field hide_div">
+    <%= f.label :score %><br>
+    <%= f.text_field :score, readonly: true  %>
+  </div>
+
+  <div class="field hide_div">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, readonly: true  %>
+  </div>
+  <div class="board hide_div">
+    <table>
+      <tr>
+        <td><input readonly type="text" name="game[board][]" class="board" id="board_0" size="1"  value="<%= @game.board[0] %>" /></td>
+        <td><input readonly type="text" name="game[board][]" class="board" id="board_1" size="1"  value="<%= @game.board[1] %>" /></td>
+        <td><input readonly type="text" name="game[board][]" class="board" id="board_2" size="1"  value="<%= @game.board[2] %>" /></td>
+      </tr>  
+       <tr>  
+        <td><input readonly type="text" name="game[board][]" class="board" id="board_3" size="1"  value="<%= @game.board[3] %>" /></td>
+        <td><input readonly type="text" name="game[board][]" class="board" id="board_4" size="1"  value="<%= @game.board[4] %>" /></td>
+        <td><input readonly type="text" name="game[board][]" class="board" id="board_5" size="1"  value="<%= @game.board[5] %>" /></td>
+              </tr>  
+               <tr>  
+        <td><input readonly type="text" name="game[board][]" class="board" id="board_6" size="1"  value="<%= @game.board[6] %>" /></td>
+        <td><input readonly type="text" name="game[board][]" class="board" id="board_7" size="1"  value="<%= @game.board[7] %>" /></td>
+        <td><input readonly type="text" name="game[board][]" class="board" id="board_8" size="1"  value="<%= @game.board[8] %>" /></td>
+      </tr>      
+    </table>
+  </div>
+
+<div class="actions hide_div">
+  <%= f.submit %>
+</div>
+
+<div class="result">
+  <% case @game.score %>
+  <% when 1..10%>
+    <h1> X Wins </h1>
+  <% when -10..-1 %>
+    <h1> O Wins </h1>
+  <%when 0%>
+    <h1> It's a Draw </h1>
+  <%else  %>
+  <% end %>
+</div>
+
+<div id="instruct">
+  <%if @game.status == "man" && !@game.score%>
+    <% if @game.board == [] || @game.board.count("") == 9 %>
+       <h3> Click on the grid to start. X makes the first move. </h3>
+    <% else %>
+      <h3> Next move by <%= @game.current_player%> </h3>
+    <% end %>
+      
+   <%elsif  !@game.score && @game.board == [] %>
+      <h4> Click on the grid to or the icon below. </h4>
+  <% end %>
+</div>
+<% end %>
+
+  <div class="hide_div" id="photo_upload_progress">
+    <%= image_tag("progress_large.gif") %>
+  </div>
+
+
+<div class="board-row">
+  <div class="display-board">
+    <table id="display-table">
+      <tr>
+        <td id="display_cell_0" class="available"><i class="fa" id="top-left"></i></td>
+        <td id="display_cell_1" class="available"><i class="fa" id="top-center" ></i></td>
+        <td id="display_cell_2" class="available"><i class="fa" id="top-right"  ></i></td>
+      </tr>      
+      <tr>       
+        <td id="display_cell_3" class="available"><i class="fa" id="middle-left"  ></i></td>
+        <td id="display_cell_4" class="available"><i class="fa" id="middle-center"></i></td>
+        <td id="display_cell_5" class="available"><i class="fa" id="middle-right" ></i></td>
+       </tr>   
+        <td id="display_cell_6" class="available"><i class="fa" id="bottom-left"  ></i></td>
+        <td id="display_cell_7" class="available"><i class="fa" id="bottom-center"></i></td>
+        <td id="display_cell_8" class="available"><i class="fa" id="bottom-right" ></i></td>
+      </tr>      
+    </table>
+  </div>
+</div>
+
+
+

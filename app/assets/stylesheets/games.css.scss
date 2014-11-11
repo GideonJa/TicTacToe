@@ -1,0 +1,116 @@
+// Place all the styles related to the games controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$board-border: 2px solid #DCEBDF;
+/*$x-color: #afd9c8;*/
+/*$y-color: #624c47;*/
+
+
+$x-color: #135a6e;
+$y-color: #996666;
+$header1-color: lighten($x-color, 15%);
+
+
+.header h1, .header h3 {
+  text-align: center;
+  color: $header1-color;
+}
+.display-board{
+    width: 50%;
+    margin: 60px auto;
+ }
+
+ table#display-table{
+  width: 100%;
+  td {
+    width: 25%;
+    height: 70px;
+    font-size: 5em;
+    text-align: center;
+  }
+ }
+
+
+#display_cell_0, #display_cell_1, #display_cell_2, #display_cell_3, #display_cell_4, #display_cell_5{
+    border-bottom: $board-border;
+    /*border-right: $board-border;*/
+}
+
+#display_cell_0, #display_cell_1,  #display_cell_3, #display_cell_4, #display_cell_6, #display_cell_7  {
+    
+    border-right: $board-border;
+}
+
+.fa-times, .fa-laptop, .fa-gamepad  {
+  color : $x-color;
+}
+
+.fa-times.hov, .fa-laptop:hover, .fa-gamepad:hover {
+    color: lighten($x-color, 10%);
+}
+
+.fa-circle-o{
+  color : $y-color;
+}
+
+.fa-circle-o.hov {
+    color: lighten($y-color, 15%)
+}
+
+.call-to-action {
+  font-size: 1.3em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  max-width: 12.5em;
+}
+
+.btn-secondary {
+    background-color: #00BAD7;
+    border: 1px solid #00BAD7;
+    color: #FFF;
+}
+
+.block-and-center {
+  display: block !important;
+  margin: 0px auto;
+}
+.myIcons p, .myIcons a, .newGame p, .newGame a,{
+  margin-top: 1px;
+  text-decoration: none;
+  color : $x-color;
+}
+
+.result h1 {
+  color : #FA5858;
+  text-align: center;
+}
+
+.hide_div {
+   display: none;
+}
+
+#photo_upload_progress {
+  /*position: absolute;
+  top: 146px;
+  left: 7px;*/
+  position: relative;
+  top: 90px;
+  left: 591px;
+  margin-bottom: -90px;
+  background-color: rgba(0,0,0,0.0);
+  padding: 32px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  width: 36px;
+}
+#instruct  {
+  color: lighten($x-color, 10%);
+  height: 40px;
+}
+#instruct h1, #instruct h3,  #instruct h4 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+
+  }
